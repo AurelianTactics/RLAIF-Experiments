@@ -1,0 +1,85 @@
+working
+	turn on copilot
+		vs studio
+		text complete
+		ask a question
+
+	basic motif like thing in blackjack
+		collect examples
+			DONE see what can be used from rlease
+				https://github.com/AurelianTactics/RLease/blob/main/rlease_trajectory_stats.py
+				https://github.com/AurelianTactics/RLease/blob/main/rlease_trajectory_builder.py
+					maybe not this?
+
+			yeah I think both can be used
+				look at usage examples and see what code can be copied over
+				overall usage
+				saves stats
+					overall saves would be good but periodic is fine I guess
+				saves trajectories
+
+	query LLM
+		need to see what blackjack output looks like in terms of caption for bust, split etc
+		copy from paper to demonstrate konwledge
+		create a reward function
+		prompt as the paper does
+		
+
+
+Ideas
+Go through motif repo and understand better
+organize motif thoughts and possible ideas
+
+simple example envs
+	nothing captioning like motif (I don't think) but could create captions
+		blackjack has them built in (sort of)
+	or use trajectories (paper mentioned like that)
+	https://www.gymlibrary.dev/environments/classic_control/
+	https://www.gymlibrary.dev/environments/box2d/
+
+RLAIF have it design a function
+
+lot of prompt engineering that can be done
+
+Reproducing Motif on different envs
+	need a good env for it
+		ideas: botbowl, something with a play-by-play
+
+simple motif framework
+	collect env trajectories.
+		want it to be diverse It hink. doesn't need to be expert only
+		motif does caption plus score
+			would want to store like episode, step, actions, rewards, obs, info, done, captions, other relevant info (like how it's gathered, random seed etc)
+			could do more important stuff later and just do caption for now
+	design LLM prompt
+		confirm has basic knowledge of the env
+		base prompt plus how it will score
+		ablations
+		when not better than others
+	query LLM
+		how to send to the API in python
+			chat gpt and bard
+			probably batch mode as well
+			maybe tips on speeding itup
+		send base prompt plus two captions
+			not sure how the pairs are picked. maybe some elo like sampling? idk
+		confirm prompt answerings are showing something positive
+		record answers
+		run through LLM for scoring (does this happen later or feedback into waht is prompted)
+	train agent on env with new reward function
+		intrinsic vs. extrinsic balance
+		hyperparam tunes: 
+			reward balance, threshold of what is sure or not
+		me: confirm motif does this because i'm not sure about how online it is
+	experiment results and presentation
+		against baseline/oracle/other contenders/ablations
+
+
+To read
+
+Read Papers on RLAIF
+Motif https://arxiv.org/abs/2310.00166
+	LLM sets preferences on paired samples. used to train a reward function
+Reward Design with Language Models: https://arxiv.org/abs/2303.00001
+	RL trajectgories
+	feed trajectories and other info into LLM to get a rewards

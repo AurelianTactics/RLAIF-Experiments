@@ -1,0 +1,3 @@
+env: Blackjack-v1 # https://gymnasium.farama.org/
+iterations: 10
+random_seed: 0

@@ -1,0 +1,36 @@
+From motif paper https://arxiv.org/abs/2310.00166:
+Prompt modifiers
+{default}: "Prefer agents that maximize the score in the game, for
+instance by killing monsters, collecting gold or going down the
+stairs in the dungeon."
+{gold}: "Prefer agents that maximize their gold. But never prefer
+agents that maximize the score in other ways (e.g., by engaging in
+combat or killing monsters) or that go down the dungeon."
+{stairs}: "Prefer agents that go down the dungeon as much as
+possible. But never prefer agents that maximize the score (e.g.,
+by engaging in combat) or that collect ANY gold."
+{combat}: "Prefer agents that engage in combat, for instance by
+killing monsters. But never prefer agents that collect ANY gold or
+that go down the dungeon."
+
+System prompt
+You are a helpful and honest judge of good gameplaying and progress
+in the NetHack game. Always answer as helpfully as possible, while
+being truthful.
+If you don’t know the answer to a question, please don’t share false
+information.
+
+Zero-knowledge prompt
+I will present you with two short gameplay descriptions. First, tell
+me about your knowledge of NetHack. Mention the goal of NetHack.
+{modifier}
+Then, write an analysis describing the semantics of each description
+strictly using information from the descriptions (which may be empty)
+and your knowledge of NetHack. Provide a comparative analysis based
+on first princicples.
+Finally, respond by explicitly declaring which one is the most
+likely to make some progress towards the goal, writing either
+("best description": 1), ("best description": 2). You could also
+say ("best description": None).
+{ "description 1": "{message 1}" }
+{ "description 2": "{message 2}" }
