@@ -1,8 +1,31 @@
+Rough Goal
+Explore how LLMs can be used to help with reward functions in RL agents.
+
 working
-	turn on copilot
+	TEST
+		collect trajectory
+
+	DONE turn on copilot
 		vs studio
 		text complete
 		ask a question
+
+	DONE see what blackjack looks like
+		DONE NO split, double, etc
+		https://gymnasium.farama.org/environments/toy_text/blackjack/
+			The observation consists of a 3-tuple containing: the player’s current sum, the value of the dealer’s 			DONE one showing card (1-10 where 1 is ace), and whether the player holds a usable ace (0 or 1).
+			
+			0: Stick
+			1: Hit
+		
+		
+	DONE make notes and notebook on blackjack  in notebook
+		no split double etc, not doing natural. only stick and hit. no info or captions
+		defaults to sab
+			I think sab = True but I don't think natural blackjack is covered in this
+
+
+	DONE fix random agent with rlease set up
 
 	basic motif like thing in blackjack
 		collect examples
@@ -12,23 +35,64 @@ working
 					maybe not this?
 
 			yeah I think both can be used
-				look at usage examples and see what code can be copied over
+				DONE look at usage examples and see what code can be copied over
+				think through exactly what I want to save and make sure it is covered
+					looks good except need to caption
+					either in info or make a caption
+						likely have to wrap the env (thinking do this seperate from data collection
 				overall usage
 				saves stats
 					overall saves would be good but periodic is fine I guess
 				saves trajectories
 
+	
 	query LLM
-		need to see what blackjack output looks like in terms of caption for bust, split etc
-		copy from paper to demonstrate konwledge
+		DONE need to see what blackjack output looks like in terms of caption for bust, split etc
+		DONE copy from paper to demonstrate konwledge
 		create a reward function
-		prompt as the paper does
+			DONE write 5 prompts
+			can try Bard and ChatGPT 3.5 for reward function
+			
+		prompt as the paper does for captioning
+
+		need a function for captioning
+
+		need base prompt taht can be filtered in
+
+		since limited number of states, maybe just simplify and design the all possible
+			hopefull functional way to get from data so can use in other envs
+
+		then need the LLM output
+			will save somewhere
+
+		need code to query and save
+			probably batch, probably a public library for this
+
+		probably want to review motif code more for this
+			make sure good with the output can be used how you want
+			maybe just small dry run for next step
+
+		optional: caption with the action too maybe? not motif like but could be useful
+			idk, I see why it doesn't make sense in the paper and why it does here because here have full obs
+			and that becomes the caption.		
 		
+	train reward function
+		baseline motif code
+
+	train agent
+
+	present results
+
+	next steps
+		how to pipeline it
 
 
 Ideas
 Go through motif repo and understand better
 organize motif thoughts and possible ideas
+maybe switch to mountaincar
+
+maybe research some other prompt suggestions
 
 simple example envs
 	nothing captioning like motif (I don't think) but could create captions
@@ -74,6 +138,8 @@ simple motif framework
 	experiment results and presentation
 		against baseline/oracle/other contenders/ablations
 
+Project wrap up
+	update the rlease files
 
 To read
 
@@ -83,3 +149,13 @@ Motif https://arxiv.org/abs/2310.00166
 Reward Design with Language Models: https://arxiv.org/abs/2303.00001
 	RL trajectgories
 	feed trajectories and other info into LLM to get a rewards
+https://arxiv.org/abs/2302.06692
+	ELLM
+	Exploration LLM. Using LLM to generates subgoals to help RL agent explore
+
+copilot questions
+	way to ask for documentation inline rather than ask
+		something about /doc
+	way to accept with shortcut key rather than click
+
+	/tests might do unit tests?

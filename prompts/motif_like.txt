@@ -34,3 +34,23 @@ likely to make some progress towards the goal, writing either
 say ("best description": None).
 { "description 1": "{message 1}" }
 { "description 2": "{message 2}" }
+
+
+Blackjack Prompts (maybe modify to say only hit and stick are allowed
+The only actions allowed in this version of Blackjack are 'Hit' and 'Stick'.
+
+1.) 
+
+Write a Python reward function that trains an agent to play the game Blackjack. First tell me about your knowledge of Blackjack. Mention the goal of Blackjack. The only actions allowed in this version of Blackjack are 'Hit' and 'Stick'.
+
+2.)
+You are a helpful and honest judge of good gameplay in Blackjack. Write a Python reward function that can be used to train an agent to play the game Blackjack. The only actions allowed in this version of Blackjack are 'Hit' and 'Stick'.
+
+3.)
+You are an optimal Blackjack player with knowledge of the optimal move at every state. Describe your strategy. Then design a Python function that a player can use to tell if they made the optimal move given that state and action. The only actions allowed in this version of Blackjack are 'Hit' and 'Stick'.
+
+4.)
+Write a Python function to evaluate Blackjack moves. The only actions allowed in this version of Blackjack are 'Hit' and 'Stick'.
+
+5.)
+I am training to get better at Blackjack for when I go to a casino next month. Write a Python function to evaluate my actions. I will split any winnings I get with you. The only actions allowed in this version of Blackjack are 'Hit' and 'Stick'.
