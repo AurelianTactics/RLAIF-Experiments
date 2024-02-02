@@ -1,51 +1,16 @@
 Rough Goal
-Explore how LLMs can be used to help with reward functions in RL agents.
+Explore how LLMs can be used to help with reward functions in RL agents. Can have applications to RLAIF, RLHF, LLMs, RL.
 
 working
+
+	need to reassess the feasibility of this
+		would need a pipeline to get the reward model I think (unless I vastly oversimplify)
+		need a better env for this wehre it's actually useful
+
 	TEST
 		collect trajectory
 
-	DONE turn on copilot
-		vs studio
-		text complete
-		ask a question
 
-	DONE see what blackjack looks like
-		DONE NO split, double, etc
-		https://gymnasium.farama.org/environments/toy_text/blackjack/
-			The observation consists of a 3-tuple containing: the player’s current sum, the value of the dealer’s 			DONE one showing card (1-10 where 1 is ace), and whether the player holds a usable ace (0 or 1).
-			
-			0: Stick
-			1: Hit
-		
-		
-	DONE make notes and notebook on blackjack  in notebook
-		no split double etc, not doing natural. only stick and hit. no info or captions
-		defaults to sab
-			I think sab = True but I don't think natural blackjack is covered in this
-
-
-	DONE fix random agent with rlease set up
-
-	basic motif like thing in blackjack
-		collect examples
-			DONE see what can be used from rlease
-				https://github.com/AurelianTactics/RLease/blob/main/rlease_trajectory_stats.py
-				https://github.com/AurelianTactics/RLease/blob/main/rlease_trajectory_builder.py
-					maybe not this?
-
-			yeah I think both can be used
-				DONE look at usage examples and see what code can be copied over
-				think through exactly what I want to save and make sure it is covered
-					looks good except need to caption
-					either in info or make a caption
-						likely have to wrap the env (thinking do this seperate from data collection
-				overall usage
-				saves stats
-					overall saves would be good but periodic is fine I guess
-				saves trajectories
-
-	
 	query LLM
 		DONE need to see what blackjack output looks like in terms of caption for bust, split etc
 		DONE copy from paper to demonstrate konwledge
@@ -77,14 +42,20 @@ working
 			and that becomes the caption.		
 		
 	train reward function
-		baseline motif code
+		DONE read baseline motif code
+
+		maybe use the vertix AI pipeline for this
+			https://learn.deeplearning.ai/reinforcement-learning-from-human-feedback/lesson/4/tune-an-llm-with-rlhf
+			would want a way to just get the reward model, don't care about the tuning of the LLM
+		probably want to do more research in general to see what tools are out there to simplify this
 
 	train agent
 
 	present results
 
-	next steps
+	future steps
 		how to pipeline it
+		how to integrate cloud
 
 
 Ideas
@@ -159,3 +130,48 @@ copilot questions
 	way to accept with shortcut key rather than click
 
 	/tests might do unit tests?
+
+
+Done
+
+	DONE turn on copilot
+		vs studio
+		text complete
+		ask a question
+
+	DONE see what blackjack looks like
+		DONE NO split, double, etc
+		https://gymnasium.farama.org/environments/toy_text/blackjack/
+			The observation consists of a 3-tuple containing: the player’s current sum, the value of the dealer’s 			DONE one showing card (1-10 where 1 is ace), and whether the player holds a usable ace (0 or 1).
+			
+			0: Stick
+			1: Hit
+		
+		
+	DONE make notes and notebook on blackjack  in notebook
+		no split double etc, not doing natural. only stick and hit. no info or captions
+		defaults to sab
+			I think sab = True but I don't think natural blackjack is covered in this
+
+
+	DONE fix random agent with rlease set up
+
+	DONE basic motif like thing in blackjack
+		collect examples
+			DONE see what can be used from rlease
+				https://github.com/AurelianTactics/RLease/blob/main/rlease_trajectory_stats.py
+				https://github.com/AurelianTactics/RLease/blob/main/rlease_trajectory_builder.py
+					maybe not this?
+
+			yeah I think both can be used
+				DONE look at usage examples and see what code can be copied over
+				think through exactly what I want to save and make sure it is covered
+					looks good except need to caption
+					either in info or make a caption
+						likely have to wrap the env (thinking do this seperate from data collection
+				overall usage
+				saves stats
+					overall saves would be good but periodic is fine I guess
+				saves trajectories
+
+	
